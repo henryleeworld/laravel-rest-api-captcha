@@ -1,4 +1,4 @@
-# Laravel 7 具象狀態傳輸應用程式介面驗證碼
+# Laravel 8 具象狀態傳輸應用程式介面驗證碼
 
 引入 mews 的 captcha 套件來擴增實作人機驗證，確保只有擁有正確密碼的真人可以存取帳戶，藉此杜絕從遠端以數位方式登入的行為。這項機制的運作原理在於，電腦可以建立扭曲的圖片及處理回應，但無法以真人思維方式閱讀或解決這類問題，因此無法通過人機驗證測驗。
 
@@ -12,21 +12,19 @@ $ git clone
 ```sh
 $ composer install
 ```
-- 產⽣ Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
+- 產生 Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
 ```sh
 $ php artisan key:generate
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
-- 你可以經由 `/api/v1/captcha` GET 動作來進行驗證碼產生；經由 `/api/v1/captcha` POST 動作來進行驗證碼驗證。
+- 你可以經由 `/api/v1/captcha` GET 動作來進行驗證碼產生。
+- 你可以經由 `/api/v1/captcha` POST 動作來進行驗證碼驗證。
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/voqDn9z.png)
+![](https://i.imgur.com/zqPhHpV.png)
 > 產生新的人機驗證圖片
 
-![](https://i.imgur.com/rAQRTst.png)
-> 提供錯誤的圖片驗證碼或公鑰無法通過人機驗證測驗
-
-![](https://i.imgur.com/r9Eu2ej.png)
+![](https://i.imgur.com/SeZQL5E.png)
 > 提供正確的圖片驗證碼及公鑰則可通過人機驗證測驗

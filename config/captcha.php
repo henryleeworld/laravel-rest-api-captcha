@@ -8,6 +8,8 @@ return [
         'height' => 36,
         'quality' => 90,
         'math' => false,
+        'expire' => 60,
+        'encrypt' => false,
     ],
     'math' => [
         'length' => 9,
@@ -16,7 +18,6 @@ return [
         'quality' => 90,
         'math' => true,
     ],
-
     'flat' => [
         'length' => 6,
         'width' => 160,
