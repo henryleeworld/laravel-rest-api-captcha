@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Api\BaseController;
+use Illuminate\Http\Request;
 
 class CaptchaController extends BaseController
 {
@@ -25,7 +25,7 @@ class CaptchaController extends BaseController
      */
     public function check(Request $request)
     {
-		if (!captcha_api_check($request->captcha, $request->key)){
+		if (!captcha_api_check($request->captcha, $request->key, 'flat')){
             return $this->sendError('Invalid captcha code.', [], 400);
         }
         return $this->sendResponse(null, 'Valid captcha code.');
