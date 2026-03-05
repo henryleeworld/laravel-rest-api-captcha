@@ -14,8 +14,8 @@ class CaptchaController extends BaseController
      */
     public function create()
     {
-		$result['captcha'] = app('captcha')->create('flat', true);
-        return $this->sendResponse($result, 'Captcha created successfully.');
+        $result['captcha'] = app('captcha')->create('flat', true);
+        return $this->sendResponse($result, __('Captcha created successfully.'));
     }
 
     /**
@@ -25,9 +25,9 @@ class CaptchaController extends BaseController
      */
     public function check(Request $request)
     {
-		if (!captcha_api_check($request->captcha, $request->key, 'flat')){
-            return $this->sendError('Invalid captcha code.', [], 400);
+        if (!captcha_api_check($request->captcha, $request->key, 'flat')){
+            return $this->sendError(__('Invalid captcha code.'), [], 400);
         }
-        return $this->sendResponse(null, 'Valid captcha code.');
+        return $this->sendResponse(null, __('Valid captcha code.'));
     }
 }
