@@ -1,4 +1,4 @@
-# Laravel 12 具象狀態傳輸應用程式介面驗證碼
+# Laravel 13 具象狀態傳輸應用程式介面驗證碼
 
 引入 mews 的 captcha 套件來擴增實作人機驗證，確保只有擁有正確密碼的真人可以存取帳號，藉此杜絕從遠端以數位方式登入的行為。這項機制的運作原理在於，電腦可以建立扭曲的圖片及處理回應，但無法以真人思維方式閱讀或解決這類問題，因此無法通過人機驗證測驗。
 
@@ -28,8 +28,8 @@ $ php artisan migrate
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/QK15BUT.png)
+![](https://i.imgur.com/L6nn7Rg.png)
 > 產生新的人機驗證圖片
 
-![](https://i.imgur.com/KcABElm.png)
+![](https://i.imgur.com/ZbcPfDp.png)
 > 提供正確的圖片驗證碼及公鑰則可通過人機驗證測驗
